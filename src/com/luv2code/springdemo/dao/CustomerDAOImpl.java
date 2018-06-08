@@ -33,4 +33,15 @@ public class CustomerDAOImpl implements CustomerDAO {
 		
 	}
 
+	@Override
+	public void saveCustomer(Customer theCustomer) {
+		
+		// get current hibernate session
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		// save the customer to the db
+		currentSession.save(theCustomer);
+		
+	}
+
 }
